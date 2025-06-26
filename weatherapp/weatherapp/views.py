@@ -11,6 +11,7 @@ from django.contrib.auth.hashers import make_password, check_password
 
 @api_view(['POST'])
 def signup(request):
+    #added comment
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         hashed_password = make_password(request.data['password'])
